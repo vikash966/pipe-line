@@ -1,7 +1,7 @@
 version: "3"
 services: 
   springboot-app:
-   # container_name: spring-app
+    #container_name: spring-app
     image: springbooot-app
     restart: always
     build: .
@@ -16,7 +16,7 @@ services:
     container_name: mysqldb
     image: mysql
     volumes:
-      -  /devopsproj/db:/var/lib/mysql
+      -  c:/Users/Vikas/OneDrive/Desktop/db:/var/lib/mysql
     ports: 
      - 3307:3306   
     environment:
