@@ -1,0 +1,13 @@
+node{
+    stage('SCM checkout'){
+        checkout scm
+    }
+    
+	stage('Run Container on Dev Server'){
+	def dockerRunApp = 'docker-compose up build -d'
+        sshagent(['dev-server']) {
+	sh "ssh -o StrictHostKeyChecking=no ec2-user@54.153.130.189 ${dockerRunApp}"
+     }
+   }
+	
+}
